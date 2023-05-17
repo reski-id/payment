@@ -9,7 +9,6 @@
   Content <br></h2>
   • Key Features <br>
   • Installing Using Github<br>
-  • Installing Using Docker<br>
   • End Point<br>
   • Technologi that i use<br>
   • Contact me<br>
@@ -37,17 +36,14 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [G
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/reski-id/news_restAPI.git
+$ git clone https://github.com/reski-id/payment.git
 
 # Go into the repository
-$ cd news_restAPI
+$ cd payment
 
 # Install dependencies
 $ go get
 
-# load .env env 
-# use bash cmd and type this..
-$ source .env
 
 # Run the app
 $ go run main.go
@@ -56,25 +52,6 @@ $ go run main.go
 > **Note**
 > Make sure you allready create database for this app see local `.env` file.
 
-
-## ⚙️ Installing and Runing with Docker
-if you are using docker or aws/google cloud server you can run this application by creating a container. <br>
-
-```bash
-# Pull this latest app from dockerhub 
-$ docker pull programmerreski/portal
-
-# if you have mysql container you can skip this
-$ docker pull mysql
-
-$ docker run --name mysqlku -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD="yourmysqlpassword" mysql 
-
-# create app container
-$ docker run --name portal -p 80:8000 -d --link mysqlku -e SECRET="secr3t" -e SERVERPORT=8000 -e Name="portal" -e Address=mysqlku -e Port=3306 -e Username="root" -e Password="yourmysqlpassword" programmerreski/portal
-
-# Run the app
-$ docker logs portal
-```
 
 ## 📜 End Point  
 
@@ -89,9 +66,9 @@ User
 Transaction
 | Methode       | End Point      | used for            | Using JWT
 | ------------- | -------------  | -----------         | -----------
-| `POST`        | /topup      | /topup            | Yes
-| `POST`        | /payment      | /payment            | Yes
-| `POST`        | /transfer      | /transfer            | Yes
+| `POST`        | /topup      | topup            | Yes
+| `POST`        | /payment      | payment            | Yes
+| `POST`        | /transfer      | transfer            | Yes
 
 
 ## 🛠️ Technologi
@@ -105,7 +82,6 @@ This software uses the following Tech:
 - [Linux](https://www.linux.com/)
 - [Docker](https://www.docker.com/)
 - [Dockerhub](https://hub.docker.com/u/programmerreski)
-- [Mockery Unit Testing](https://github.com/vektra/mockery)
 - [Git Repository](https://github.com/reski-id)
 - [Trunk Base Development](https://trunkbaseddevelopment.com/)
 - [JSON Web Tokens (JWT)](https://jwt.io/)
